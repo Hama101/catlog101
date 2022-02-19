@@ -1,0 +1,179 @@
+{%extends 'base2.html'%}
+{%load static%}
+{%block head%}
+<title>OMEGA STORE</title>
+{%endblock%}
+
+
+{%block body%}
+
+
+
+
+<!--
+    Additional Classes:
+        .nk-header-opaque
+-->
+
+
+
+<!--
+START: Navbar Mobile
+
+Additional Classes:
+    .nk-navbar-left-side
+    .nk-navbar-right-side
+    .nk-navbar-lg
+    .nk-navbar-overlay-content
+-->
+
+
+
+
+<div class="nk-main">
+
+    <div class="nk-gap-2"></div>
+
+    <div class="container">
+        <!-- START: Image Slider -->
+        <div class="nk-image-slider" data-autoplay="8000">
+
+
+            <div class="nk-image-slider-item">
+                <img src="https://cdn.akamai.steamstatic.com/steam/apps/355880/capsule_616x353.jpg?t=1590487706" alt=""
+                    class="nk-image-slider-img"
+                    data-thumb="https://cdn.akamai.steamstatic.com/steam/apps/355880/capsule_616x353.jpg?t=1590487706">
+
+                <div class="nk-image-slider-content">
+
+                    <h3 class="h4">As we Passed, I remarked</h3>
+                    <p class="text-white">As we passed, I remarked a beautiful church-spire rising above some old elms
+                        in the park; and before them, in the midst of a lawn, chimneys covered with ivy, and the windows
+                        shining in the sun.</p>
+                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
+
+                </div>
+
+            </div>
+
+            <div class="nk-image-slider-item">
+                <img src="https://i.ytimg.com/vi/aLUGHQq2aek/maxresdefault.jpg" alt="" class="nk-image-slider-img"
+                    data-thumb="https://i.ytimg.com/vi/aLUGHQq2aek/maxresdefault.jpg">
+
+                <div class="nk-image-slider-content">
+
+                    <h3 class="h4">He made his passenger captain of one</h3>
+                    <p class="text-white">Now the races of these two have been for some ages utterly extinct, and
+                        besides to discourse any further of them would not be at all to my purpose. But the concern I
+                        have most at heart is for our Corporation of Poets, from whom I am preparing a petition to your
+                        Highness, to be subscribed with the names of one...</p>
+                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
+
+                </div>
+
+            </div>
+
+            <div class="nk-image-slider-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_xChiMtCJKrt91AraRkUcvYutdMQpSZNxYv1NTncxKem2zptWsVOUu11EkETZ6wF3BoY&usqp=CAU"
+                    alt="" class="nk-image-slider-img"
+                    data-thumb="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_xChiMtCJKrt91AraRkUcvYutdMQpSZNxYv1NTncxKem2zptWsVOUu11EkETZ6wF3BoY&usqp=CAU">
+
+            </div>
+
+            <div class="nk-image-slider-item">
+                <img src="{%static 'assets/images/slide-4.jpg'%}" alt="" class="nk-image-slider-img"
+                    data-thumb="{% static 'assets/images/slide-4-thumb.jpg'%}">
+
+                <div class="nk-image-slider-content">
+
+                    <h3 class="h4">At length one of them called out in a clear</h3>
+                    <p class="text-white">TJust then her head struck against the roof of the hall: in fact she was now
+                        more than nine feet high...</p>
+                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
+
+                </div>
+
+            </div>
+
+            <div class="nk-image-slider-item">
+                <img src="{%static 'assets/images/slide-5.jpg'%}" alt="" class="nk-image-slider-img"
+                    data-thumb="{% static 'assets/images/slide-5-thumb.jpg'%}">
+
+                <div class="nk-image-slider-content">
+
+                    <h3 class="h4">For good, too though, in consequence</h3>
+                    <p class="text-white">She gave my mother such a turn, that I have always been convinced I am
+                        indebted to Miss Betsey for having been born on a Friday. The word was appropriate to the
+                        moment.</p>
+                    <p class="text-white">My mother was so much worse that Peggotty, coming in with the teaboard and
+                        candles, and seeing at a glance how ill she was, - as Miss Betsey might have done sooner if
+                        there had been light enough, - conveyed her upstairs to her own room with all speed; and
+                        immediately dispatched Ham Peggotty, her nephew, who had been for some days past secreted in the
+                        house...</p>
+                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- END: Image Slider -->
+        {%include 'cat.html'%}
+
+        <!-- START: Latest News -->
+
+        <div class="nk-gap-2"></div>
+        <div class="nk-blog-grid">
+            <div class="row">
+
+
+                {%for game in games%}
+                <div class="col-md-6 col-lg-3">
+                    <!-- START: Post -->
+                    <div class="nk-blog-post">
+                        <a href="#" class="nk-post-img">
+                            <img src="{{game.coverImg}}" alt="He made his passenger captain of one" height="200"
+                                width="200">
+                            <span class="nk-post-comments-count">13</span>
+
+                            <span class="nk-post-categories">
+                                <span class="bg-main-5">Indie</span>
+                            </span>
+
+                        </a>
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="#">He made his passenger captain of
+                                one</a></h2>
+                        <div class="nk-post-text">
+                            <p>Just then her head struck against the roof of the hall: in fact she was now more than
+                                nine feet high, and she at once took up the little golden key and hurried off to the
+                                garden door...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                        <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read
+                            More</a>
+                        <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018
+                        </div>
+                    </div>
+                    <!-- END: Post -->
+                </div>
+
+                {%endfor%}
+
+            </div>
+        </div>
+        <!-- END: Latest News -->
+
+
+        {%include 'search.html'%}
+
+
+    </div>
+
+
+
+
+
+
+
+    {%endblock%}

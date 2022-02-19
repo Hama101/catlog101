@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block head%}
+    <title>Games</title>
+    <link rel="stylesheet" href="{% static 'css/listofgames.css' %}">
+{%endblock%}
+
+{%block body %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+<div class="events_area">
+    <div>
+        <div class="row">
+            {%for game in games%}
+            <div class="col-lg-6 col-md-6">
+                <div class="single_event position-relative">
+                    <div class="event_thumb">
+                        <img src="{{game.coverImg}}" />
+                    </div>
+                    <div class="event_details">
+                        <div class="console">
+                            <p>{{game.console.upper}}</p>
+                            <hr>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="date"><span>{{game.price}}</span> Dt</div>
+                            <div class="time-location">
+                                <p class="h1"> {{game.title}}</p>
+                            </div>
+                        </div>
+                        <p>
+                            {{game.shortDescription}}
+                        </p>
+                        <a href="./{{game.id}}" class="btn btn-primary rounded-0 mt-3">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+{%endblock%}

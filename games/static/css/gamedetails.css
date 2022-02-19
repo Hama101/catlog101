@@ -1,0 +1,127 @@
+
+/* Create three columns of equal width */
+.columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+}
+.info{
+    background-color:#111;
+    color: white;
+    font-size:20px;
+}
+  /* Style the list */
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.element:hover{
+    box-shadow: 0 8px 12px 0 rgba(95, 219, 37, 0.2);
+}
+  /* Add shadows on hover */
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(95, 219, 37, 0.2);
+}
+
+  /* Pricing header */
+.price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+  /* List items */
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+  /* Grey list item */
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .columns {
+        width: 100%;
+    }
+}
+.longDescription{
+    font-size: 20px;
+    color : #ffffff;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title
+{
+    font-size: 36px;
+    color: #28a708;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.img-responsive{
+    height: 350px;
+    width:550px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.f-button
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+}
+.f-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #d3dfd1;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
+}
+.btn-default:active .f-button:active
+{
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+img {
+    padding: 50px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+img:hover{
+    transform: scale(1.5);
+}

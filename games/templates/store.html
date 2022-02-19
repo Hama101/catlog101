@@ -1,0 +1,73 @@
+{%extends 'base2.html'%}
+{%load static%}
+
+{%block head%}
+
+<title>OMEGA | Store</title>
+
+{%endblock%}
+
+
+
+
+{%block body%}
+
+
+<div class="nk-main">
+
+    <!-- START: Breadcrumbs -->
+    <div class="nk-gap-1"></div>
+    <div class="container">
+        <ul class="nk-breadcrumbs">
+            <li><a href="{%url 'home'%}">Home</a></li>
+            <li><span class="fa fa-angle-right"></span></li>
+            <li><span>Store</span></li>
+        </ul>
+    </div>
+    <div class="nk-gap-1"></div>
+    <!-- END: Breadcrumbs -->
+
+    <div class="container">
+        <!-- START: Categories -->
+        {%include 'cat.html'%}
+        <!-- END: Categories -->
+
+        <!-- START: Featured Games -->
+        <div class="nk-gap-3"></div>
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Featured</span> Games</span></h3>
+        <div class="nk-gap"></div>
+        <div class="row vertical-gap">
+
+            {%for game in games %}
+            <div class="col-lg-6">
+                <div class="nk-product-cat-2">
+                    <a class="nk-product-image" href="{%url 'game' id=game.id%}">
+                        <img src="{{game.coverImg}}" alt="{{game}}">
+                    </a>
+                    <div class="nk-product-cont">
+                        <h3 class="nk-product-title h5"><a href="{%url 'game' id=game.id%}">{{game}}</a>
+                        </h3>
+                        <div class="nk-gap-1"></div>
+                        <div class="nk-product-rating" data-rating="3.5"> <i class="fa fa-star"></i> <i
+                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="nk-gap-1"></div>
+                        {{game.shortDescription}}
+                        <div class="nk-gap-2"></div>
+                        <div class="nk-product-price">Dt {{game.price}}</div>
+                        <div class="nk-gap-1"></div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <!-- END: Featured Games -->
+    </div>
+
+    <div class="nk-gap-2"></div>
+
+
+    {%include 'search.html'%}
+
+    {%endblock%}

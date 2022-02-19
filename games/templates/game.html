@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block head%}
+    <title>{{game.title}}</title>
+    <link rel="stylesheet" href="{% static 'css/gamedetails.css' %}">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $(".f-button").click(function(){
+                var value = $(this).attr('data-f');
+                if(value == "all")
+                {
+                    //$('.f').removeClass('hidden');
+                    $('.f').show('1000');
+                }
+                else
+                {
+        //            $('.f[f-item="'+value+'"]').removeClass('hidden');
+        //            $(".f").not('.f[f-item="'+value+'"]').addClass('hidden');
+                    $(".f").not('.'+value).hide('3000');
+                    $('.f').f('.'+value).show('3000');
+                }
+            });
+            if ($(".f-button").removeClass("active")) {
+        $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+        });
+    </script>
+{%endblock%}
+
+{%block body %}
+
+    <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h1 class="gallery-title">{{game.title}}</h1>
+        <p class="longDescription">{{game.longDescription}}</p>
+
+        <div class="container">
+            <ul class="price">
+                <li class="header">Specs</li>
+                <li class="grey">{{game.price}} Dt</li>
+                <li class="info">Os : {{game.os}} </li>
+                <li class="info">Cpu : {{game.cpu}}</li>
+                <li class="info">Gpu : {{game.gpu}} </li>
+                <li class="info" >Ram : {{game.ram}}gb</li>
+                <li class="info">Hdd : {{game.hdd}}gb</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="container element">
+        <iframe width="1110" height="600"
+        src="{{game.youtubeUrl}}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+        </iframe>
+    </div>
+    <br>
+<div>
+    <div class="row">
+
+        <div class="gallery_product element col-lg-4 col-md-4 col-sm-4 col-xs-6 f hdpe">
+            <img src="{{game.img1Url}}" class="img-responsive">
+        </div>
+
+        <div class="gallery_product element col-lg-4 col-md-4 col-sm-4 col-xs-6 f irrigation">
+            <img src="{{game.img2Url}}" class="img-responsive">
+        </div>
+
+        <div class="gallery_product element col-lg-4 col-md-4 col-sm-4 col-xs-6 f spray">
+            <img src="{{game.img3Url}}" class="img-responsive">
+        </div>
+    </div>
+</div>
+
+{%endblock%}
